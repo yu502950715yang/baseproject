@@ -1,7 +1,7 @@
-package com.example.baseproject.dao;
+package com.example.baseproject.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.example.baseproject.model.User;
+import com.example.baseproject.entity.User;
 
 /**
  * 用户mapper

@@ -1,6 +1,6 @@
 package com.example.baseproject.controller;
 
-import com.example.baseproject.model.User;
+import com.example.baseproject.entity.User;
 import com.example.baseproject.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -1,7 +1,7 @@
 package com.example.baseproject.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.example.baseproject.model.User;
+import com.example.baseproject.entity.User;
 
 /**
  * 用户接口

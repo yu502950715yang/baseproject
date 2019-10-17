@@ -1,4 +1,4 @@
-package com.example.baseproject.model;
+package com.example.baseproject.entity;
 
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
