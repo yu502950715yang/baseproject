@@ -12,13 +12,6 @@ import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
-/**
- * Description on this file, you will change here.
- *
- * @author Eric
- * @since 1.0
- * Create with Intellij IDEA on 2019-10-18 14:36
- */
 public class GuavaCacheManager implements CacheManager {
     private final ConcurrentMap<String, Cache> cacheMap = new ConcurrentHashMap(16);
     private boolean dynamic = true;
