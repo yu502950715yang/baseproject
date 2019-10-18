@@ -11,4 +11,12 @@ import com.example.baseproject.entity.User;
  * Create with Intellij IDEA on 2019-10-17 13:20
  */
 public interface UserMapper extends BaseMapper<User> {
+
+    /**
+     * 根据token获取用户信息
+     *
+     * @param token 用户token
+     * @return 用户信息
+     */
+    User getUserByToken(String token);
 }
