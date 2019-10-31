@@ -14,7 +14,8 @@ public class CacheRemovalListener implements RemovalListener<Object, Object> {
 
     @Override
     public void onRemoval(RemovalNotification<Object, Object> removalNotification) {
-        String tips = String.format("key=%s,value=%s,reason=%s", removalNotification.getKey(), removalNotification.getValue(), removalNotification.getCause());
+        String tips = String.format("key=%s,value=%s,reason=%s", removalNotification.getKey(),
+                removalNotification.getValue(), removalNotification.getCause());
         System.out.println(tips);
     }
 }
