@@ -1,4 +1,4 @@
-package com.example.baseproject.cache;
+package com.example.baseproject.common.cache;
 
 import com.google.common.cache.Cache;
 import com.google.common.cache.LoadingCache;

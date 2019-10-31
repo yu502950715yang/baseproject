@@ -1,4 +1,4 @@
-package com.example.baseproject.cache;
+package com.example.baseproject.common.cache;
 
 import com.google.common.cache.CacheBuilder;
 import org.springframework.cache.CacheManager;

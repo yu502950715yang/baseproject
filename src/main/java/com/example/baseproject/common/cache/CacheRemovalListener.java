@@ -1,4 +1,4 @@
-package com.example.baseproject.cache;
+package com.example.baseproject.common.cache;
 
 import com.google.common.cache.RemovalListener;
 import com.google.common.cache.RemovalNotification;
