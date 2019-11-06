@@ -2,6 +2,9 @@ package com.viready.eyas.controller;
 
 import com.viready.eyas.entity.User;
 import com.viready.eyas.service.UserService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -30,11 +33,14 @@ public class UserController {
         this.userService = userService;
     }
 
+    @ApiOperation(value = "获取全部用户")
+    @ApiImplicitParam(name = "token", required = true, paramType = "header")
     @GetMapping("/getAll")
     public List<User> getAll() {
         return userService.list();
     }
 
+    @ApiOperation(value = "根据token获取用户信息", notes = "必传参数：token")
     @GetMapping("/getByToken/{token}")
     public User getByToken(@PathVariable String token) {
         logger.info("----------根据token获取用户信息-----------");
