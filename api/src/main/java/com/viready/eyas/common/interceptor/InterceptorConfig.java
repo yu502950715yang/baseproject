@@ -23,8 +23,8 @@ public class InterceptorConfig implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object o) throws Exception {
         log.info("----------开始拦截请求----------");
-        String toekn = request.getHeader("token");
-        if (null == toekn) {
+        String token = request.getHeader("token");
+        if (null == token) {
             response.sendRedirect("/login");
             return false;
         }
