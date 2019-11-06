@@ -21,6 +21,7 @@ import java.util.List;
  * @since 1.0
  * Create with Intellij IDEA on 2019-10-17 13:23
  */
+@Api(tags = "用户管理")
 @RestController
 @RequestMapping("/user")
 public class UserController {
