@@ -1,4 +1,4 @@
-package com.viready;
+package com.viready.eyas;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
