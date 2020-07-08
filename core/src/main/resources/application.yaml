@@ -25,4 +25,5 @@ spring:
     type: com.alibaba.druid.pool.DruidDataSource
 
 commom:
+  #全局日期格式
   date-format: yyyy-MM-dd HH:mm:ss

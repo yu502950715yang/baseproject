@@ -27,7 +27,7 @@ import java.util.Map;
 @Configuration
 @PropertySource("classpath:application.yaml")
 @ConfigurationProperties(prefix = "common")
-public class LocalDateTimeSerializerConfig {
+public class DateSerializerConfig {
 
     @Value("${date-format}")
     private String pattern;
