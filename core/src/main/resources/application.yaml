@@ -23,3 +23,6 @@ spring:
       #如果指定,则查询必须是一个SQL SELECT并且必须返回至少一行记录
       validation-query: select 1
     type: com.alibaba.druid.pool.DruidDataSource
+
+commom:
+  date-format: yyyy-MM-dd HH:mm:ss
