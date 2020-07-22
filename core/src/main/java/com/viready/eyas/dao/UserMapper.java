@@ -2,7 +2,7 @@ package com.viready.eyas.dao;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.viready.eyas.model.User;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 /**
  * 用户mapper
@@ -11,6 +11,6 @@ import org.springframework.stereotype.Component;
  * @since 1.0
  * Create with Intellij IDEA on 2019-10-17 13:20
  */
-@Component
+@Repository
 public interface UserMapper extends BaseMapper<User> {
 }
