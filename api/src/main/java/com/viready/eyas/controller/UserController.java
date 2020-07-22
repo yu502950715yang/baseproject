@@ -1,6 +1,6 @@
 package com.viready.eyas.controller;
 
-import com.viready.eyas.entity.User;
+import com.viready.eyas.model.User;
 import com.viready.eyas.service.UserService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
@@ -46,5 +46,11 @@ public class UserController {
     public User getByToken(@PathVariable String token) {
         logger.info("----------根据token获取用户信息-----------");
         return userService.getUserByToken(token);
+    }
+
+    @ApiOperation(value = "测试多线程")
+    @GetMapping("/testAsync")
+    public void testAsync() {
+        userService.testAsync();
     }
 }

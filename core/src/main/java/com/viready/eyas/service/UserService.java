@@ -2,7 +2,7 @@ package com.viready.eyas.service;
 
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.viready.eyas.entity.User;
+import com.viready.eyas.model.User;
 
 /**
  * 用户接口
@@ -14,4 +14,6 @@ import com.viready.eyas.entity.User;
 public interface UserService extends IService<User> {
 
     User getUserByToken(String token);
+
+    void testAsync();
 }

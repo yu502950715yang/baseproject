@@ -1,4 +1,4 @@
-package com.viready.eyas.entity;
+package com.viready.eyas.model;
 
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
