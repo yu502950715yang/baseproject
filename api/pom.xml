@@ -11,13 +11,18 @@
     <artifactId>api</artifactId>
     <packaging>jar</packaging>
 
-    <name>admin</name>
+    <name>api</name>
 
     <dependencies>
         <dependency>
             <groupId>com.viready.eyas</groupId>
             <artifactId>core</artifactId>
             <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-freemarker</artifactId>
         </dependency>
     </dependencies>
 
@@ -26,9 +31,6 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-                    <fork>true</fork>
-                </configuration>
             </plugin>
         </plugins>
     </build>
