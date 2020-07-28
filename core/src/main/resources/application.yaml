@@ -1,6 +1,6 @@
 spring:
   profiles:
-    active: test
+    active: dev
 
 commom:
   #全局日期格式
