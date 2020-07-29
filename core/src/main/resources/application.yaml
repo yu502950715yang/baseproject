@@ -1,6 +1,10 @@
 spring:
   profiles:
     active: dev
+  freemarker:
+    #设定ftl文件路径
+    template-loader-path: classpath:/templates
+    content-type: text/html
 
 commom:
   #全局日期格式
