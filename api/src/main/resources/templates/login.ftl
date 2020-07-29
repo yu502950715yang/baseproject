@@ -2,148 +2,104 @@
 <html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <title>登录</title>
-    <!-- <base href="/static/"> -->
-    <link type="text/css" rel="stylesheet" href="dist/css/login2.css">
-    <link type="text/css" rel="stylesheet" href="dist/css/login.css">
-    <link type="text/css" rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
-    <!--[if IE]>
-    <script src="http://libs.useso.com/js/html5shiv/3.7/html5shiv.min.js"></script>
+    <title>后台管理-登陆</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="/lib/layui-v2.5.6/css/layui.css" media="all">
+    <!--[if lt IE 9]>
+    <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+    <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <link type="text/css" href="dist/css/font-awesome.css" rel="stylesheet">
+    <style>
+        html, body {width: 100%;height: 100%;overflow: hidden}
+        body {background: #1E9FFF;}
+        body:after {content:'';background-repeat:no-repeat;background-size:cover;-webkit-filter:blur(3px);-moz-filter:blur(3px);-o-filter:blur(3px);-ms-filter:blur(3px);filter:blur(3px);position:absolute;top:0;left:0;right:0;bottom:0;z-index:-1;}
+        .layui-container {width: 100%;height: 100%;overflow: hidden}
+        .admin-login-background {width:360px;height:300px;position:absolute;left:50%;top:40%;margin-left:-180px;margin-top:-100px;}
+        .logo-title {text-align:center;letter-spacing:2px;padding:14px 0;}
+        .logo-title h1 {color:#1E9FFF;font-size:25px;font-weight:bold;}
+        .login-form {background-color:#fff;border:1px solid #fff;border-radius:3px;padding:14px 20px;box-shadow:0 0 8px #eeeeee;}
+        .login-form .layui-form-item {position:relative;}
+        .login-form .layui-form-item label {position:absolute;left:1px;top:1px;width:38px;line-height:36px;text-align:center;color:#d2d2d2;}
+        .login-form .layui-form-item input {padding-left:36px;}
+        .captcha {width:60%;display:inline-block;}
+        .captcha-img {display:inline-block;width:34%;float:right;}
+        .captcha-img img {height:34px;border:1px solid #e6e6e6;height:36px;width:100%;}
+    </style>
 </head>
 <body>
-<div class="cont">
-    <div class="demo">
-        <div class="login">
-            <form class="login__form" method="post">
-                <input type="hidden" id="submitFail" value="${msg!}">
-                <h3>用户登录</h3>
-                <p>欢迎登录XXX后台管理系统</p>
-                <div class="login__row input-group">
-                    <span class="glyphicon glyphicon-user"></span>
-                    <input type="text" class="login__input name" placeholder="用户名" name="username" id="username">
-
+<div class="layui-container">
+    <div class="admin-login-background">
+        <div class="layui-form login-form">
+            <form class="layui-form" action="">
+                <div class="layui-form-item logo-title">
+                    <h1>XXX后台登录</h1>
                 </div>
-                <div class="login__row input-group">
-                    <span class="glyphicon glyphicon-lock"></span>
-                    <input type="password" class="login__input pass" placeholder="密码" name="password" id="password">
+                <div class="layui-form-item">
+                    <label class="layui-icon layui-icon-username" for="username"></label>
+                    <input type="text" name="username" lay-verify="required|account" placeholder="用户名或者邮箱" autocomplete="off" class="layui-input" value="admin">
                 </div>
-                <button type="button" id="loginBtn" class="login__submit">登 录</button>
-                <!--按钮模块-->
-                <div class="outside-login">
-                    <div class="outside-login-tit">
-                        <span>友情链接</span>
+                <div class="layui-form-item">
+                    <label class="layui-icon layui-icon-password" for="password"></label>
+                    <input type="password" name="password" lay-verify="required|password" placeholder="密码" autocomplete="off" class="layui-input" value="123456">
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-icon layui-icon-vercode" for="captcha"></label>
+                    <input type="text" name="captcha" lay-verify="required|captcha" placeholder="图形验证码" autocomplete="off" class="layui-input verification captcha" >
+                    <div class="captcha-img">
+                        <img id="captchaPic" src="login/captcha">
                     </div>
-                    <div class="outside-login-cot">
-                        <a class="outside-login-btn wxoa actived oschina J-btnSwitchLoginType" target="_Blank"
-                           href="https://www.baidu.com/">
-                            <em><i class="fa fa-home"></i></em>
-                            <span>百度</span>
-                        </a>
-                        <a class="outside-login-btn wxoa actived git J-btnSwitchLoginType" target="_Blank"
-                           href="https://github.com/">
-                            <em><i class="fa fa-github"></i></em>
-                            <span>Github</span>
-                        </a>
-                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <button class="layui-btn layui-btn layui-btn-normal layui-btn-fluid" lay-submit="" lay-filter="login">登 入</button>
                 </div>
             </form>
         </div>
     </div>
-    <div class="sys_info">
-        <div class="sys_title">
-            <h3>
-                欢迎使用 <strong>后台管理系统</strong>
-            </h3>
-            <ul>
-                <li><i class="fa fa-arrow-circle-o-right m-r-xs"></i>FreeMarker</li>
-                <li><i class="fa fa-arrow-circle-o-right m-r-xs"></i>SpringBoot</li>
-                <li><i class="fa fa-arrow-circle-o-right m-r-xs"></i>MyBatis-plus</li>
-                <li><i class="fa fa-arrow-circle-o-right m-r-xs"></i>MySql</li>
-            </ul>
-        </div>
-    </div>
 </div>
-
-
-<script type="text/javascript" src="dist/js/pages/login2.js"></script>
-<!-- jQuery 2.2.3 -->
-<script type="text/javascript" src="plugins/jQuery/jquery-2.2.3.min.js"></script>
-<script type="text/javascript" src="plugins/validate/jquery.validate.min.js"></script>
-<script type="text/javascript" src="plugins/validate/messages_zh.min.js"></script>
-<script type="text/javascript" src="plugins/jquery.tips.js"></script>
+<script src="/lib/jquery-3.4.1/jquery-3.4.1.min.js" charset="utf-8"></script>
+<script src="/lib/layui-v2.5.6/layui.js" charset="utf-8"></script>
+<script src="/lib/jq-module/jquery.particleground.min.js" charset="utf-8"></script>
 <script>
-    $(document).ready(function () {
-        var submitFail = $("#submitFail").val();
-        if (submitFail != '') {
-            console.log("submitFail:" + submitFail);
-            if (submitFail === "用户不存在！") {
-                $("#submitFail").val('');
-                $("#username").tips({
-                    side: 1,
-                    msg: submitFail,
-                    bg: '#AE81FF',
-                    time: 3
-                });
-            } else {
-                $("#submitFail").val('');
-                $("#password").tips({
-                    side: 3,
-                    msg: submitFail,
-                    bg: '#AE81FF',
-                    time: 3
-                });
-            }
-        }
-        $('#loginBtn').on('click', function (e) {
-            if (check()) {
-                submitForm();
-            }
-            return false;
+    layui.use(['form'], function () {
+        var form = layui.form,
+            layer = layui.layer;
+
+        // 登录过期的时候，跳出ifram框架
+        if (top.location != self.location) top.location = self.location;
+
+        // 粒子线条背景
+        $(document).ready(function(){
+            $('.layui-container').particleground({
+                dotColor:'#7ec7fd',
+                lineColor:'#7ec7fd'
+            });
         });
 
-        function submitForm() {
-            var options = {
-                url: '/login',
-                type: 'post',
-                dataType: 'text',
-                data: $(".login__form").serialize(),
-                success: function (data) {
-                    $(".login__submit").removeClass('processing');
-                    window.location = "login";
-                }
-            }
-
-            $.ajax(options);
-        };
-
-        function check() {
-            if ($("#username").val() == "") {
-                $("#username").tips({
-                    side: 1,
-                    msg: '用户名不得为空',
-                    bg: '#AE81FF',
-                    time: 3
-                });
-                $("#username").focus();
-                return false;
-            } else {
-                $("#username").val(jQuery.trim($('#username').val()));
-            }
-            if ($("#password").val() == "") {
-
-                $("#password").tips({
-                    side: 3,
-                    msg: '密码不得为空',
-                    bg: '#AE81FF',
-                    time: 3
-                });
-                $("#password").focus();
+        // 进行登录操作
+        form.on('submit(login)', function (data) {
+            data = data.field;
+            if (data.username == '') {
+                layer.msg('用户名不能为空');
                 return false;
             }
-            return true;
-        };
+            if (data.password == '') {
+                layer.msg('密码不能为空');
+                return false;
+            }
+            if (data.captcha == '') {
+                layer.msg('验证码不能为空');
+                return false;
+            }
+            layer.msg('登录成功', function () {
+                window.location = '/index.html';
+            });
+            return false;
+        });
     });
 </script>
 </body>
