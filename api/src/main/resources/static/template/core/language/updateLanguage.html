@@ -1,0 +1,39 @@
+<div class="modal-dialog modal-lg">
+    <div class="modal-content" id="modalContent">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+            <h4 class="modal-title" id="modalTitle">{{i18n.language.editLanguage}}</h4>
+        </div>
+        <div class="modal-body form">
+            <form id="dialogForm" class="form-horizontal">
+                <input type="hidden" id="id" value="{{language.id}}">
+                <div class="form-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">{{i18n.language.locale}}<span class="required"> * </span></label>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control input-medium" placeholder="{{i18n.language.locale}}"  
+                                           id="locale" name="locale" value="{{language.locale}}" required="required">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">{{i18n.language.languageName}}<span class="required"> * </span></label>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control input-medium" placeholder="{{i18n.language.languageName}}"  
+                                           id="languageName" name="languageName" value="{{language.languageName}}" required="required">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn green" id="updateBtn">{{i18n.common.save}}</button>
+            <button type="button" class="btn btn-outline grey-gallery" data-dismiss="modal">{{i18n.common.close}}</button>
+        </div>
+    </div>
+</div>

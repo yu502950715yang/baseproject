@@ -1,0 +1,25 @@
+{{each attachmentList as attachment}}
+    <tr class="template-download fade in">
+        <td>
+            <span class="preview">
+                {{if attachment.isImg}}
+                    <a href="{{attachment.url}}" title="{{attachment.fileName}}" download="{{attachment.url}}"><img src="{{attachment.url}}" style="max-width:200px;max-height:200px"></a>
+                {{/if}}
+            </span>
+        </td>
+        <td>
+            <p class="name">
+                <a href="{{attachment.url}}" target="_blank" title="{{attachment.fileName}}" download="{{attachment.url}}">{{attachment.fileName}}</a>
+            </p>
+        </td>
+        <td>
+            <span class="size">{{attachment.size | formatFileSize}}</span>
+        </td>
+        <td>
+            <button class="btn btn-danger delete updateDeleteStatus" data-id="{{attachment.id}}" type="button">
+                <i class="glyphicon glyphicon-trash"></i>
+                <span>{{messages.delete}}</span>
+            </button>
+        </td>
+    </tr>
+{{/each}}

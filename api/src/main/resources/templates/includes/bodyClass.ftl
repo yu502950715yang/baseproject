@@ -1,0 +1,1 @@
+page-sidebar-closed-hide-logo page-content-white page-header-fixed page-sidebar-fixed

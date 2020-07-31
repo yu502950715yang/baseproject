@@ -1,0 +1,39 @@
+<div class="modal-dialog modal-lg">
+    <div class="modal-content" id="modalContent">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+            <h4 class="modal-title" id="modalTitle">{{i18n.globalParam.addGlobalParam}}</h4>
+        </div>
+        <div class="modal-body form">
+            <form id="dialogForm" class="form-horizontal">
+                <div class="form-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">{{i18n.globalParam.varName}}<span class="required"> * </span></label>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control input-medium" placeholder="{{i18n.globalParam.varName}}" required="required" id="paramName" name="paramName">
+                                    <span class="help-block"></span>
+                                </div>
+                                <label class="col-md-4 control-label">{{i18n.globalParam.varValue}}<span class="required"> * </span></label>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control input-medium" placeholder="{{i18n.globalParam.varValue}}" required="required" id="paramValue" name="paramValue">
+                                    <span class="help-block"></span>
+                                </div>
+                                <label class="col-md-4 control-label">{{i18n.common.description}}<span class="required"> * </span></label>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control input-medium" placeholder="{{i18n.common.description}}" id="paramDescription" required="required" name="paramDescription">
+                                    <span class="help-block"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn green" id="addBtn">{{i18n.common.save}}</button>
+            <button type="button" class="btn btn-outline grey-gallery" data-dismiss="modal">{{i18n.common.close}}</button>
+        </div>
+    </div>
+</div>

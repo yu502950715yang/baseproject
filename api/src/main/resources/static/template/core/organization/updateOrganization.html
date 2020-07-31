@@ -1,0 +1,113 @@
+<div class="modal-dialog modal-lg">
+    <div class="modal-content" id="modalContent">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+            <h4 class="modal-title" id="modalTitle"></h4>
+        </div>
+        <div class="modal-body form">
+            <form id="dialogForm" class="form-horizontal">
+                <div class="form-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">{{i18n.org.departmentId}}<span class="required"> * </span></label>
+
+                                <div class="col-md-8">
+                                    <input type="hidden" id="parentId" value="{{organ.parentId}}"/>
+                                    <input type="hidden" id="level" value="{{organ.level}}"/>
+                                    <input type="text" class="form-control input-medium" placeholder="{{i18n.org.departmentId}}" readonly="true"  required="required" maxlength="11"
+                                           id="organId" name="organizationId" value="{{organ.organizationId}}">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">{{i18n.org.departmentName}}<span class="required"> * </span></label>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control input-medium" placeholder="{{i18n.org.departmentName}}"  required="required" maxlength="200"
+                                           id="organName" name="organizationName" value="{{organ.organizationName}}">
+                                    <span class="help-block">{{i18n.org.thisDepartmentName}}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group last">
+                                <label class="col-md-4 control-label">{{i18n.common.sortId}}</label>
+
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control input-medium" placeholder="{{i18n.common.sortId}}"
+                                           id="sortId" name="sortId" value="{{organ.sortId}}">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">{{i18n.org.isEndDepartment}}</label>
+                                <div class="col-md-8">
+                                    <div class="radio-list">
+                                        <label class="radio-inline">
+                                            <input type="radio" name="leaf" value="true"  checked="checked">{{i18n.common.yes}}
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="leaf" value="false">{{i18n.common.no}}
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group last">
+                                <label class="col-md-4 control-label">{{i18n.common.enable}}</label>
+                                <div class="col-md-8">
+                                    <div class="radio-list">
+                                        <label class="radio-inline">
+                                            <input type="radio" name="status" value="true" checked="checked">{{i18n.common.yes}}
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="status" value="false">{{i18n.common.no}}
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-5" >
+                            <div class="form-group">
+                                <div class="col-md-offset-3 col-md-9 text-center">
+                                    <label class="control-label">{{i18n.org.allUser}}</label>
+                                    <select id="originalSelect" class="form-control" multiple="multiple" style="height: 420px;" ></select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="change-select-center-div">
+                                <div class="change-select-btn-div"><a onclick="changeSelect('originalSelect','targetSelect')" class="btn purple" >>></a></div>
+                                <div class="change-select-btn-div"><a onclick="changeSelectAll('originalSelect','targetSelect')" class="btn purple">>>></a></div>
+                                <div class="change-select-btn-div"><a onclick="changeSelect('targetSelect','originalSelect')" class="btn green" ><<</a></div>
+                                <div class="change-select-btn-div"><a onclick="changeSelectAll('targetSelect','originalSelect')" class="btn green" ><<<</a></div>
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="form-group">
+                                <div class="col-md-9 text-center">
+                                    <label class="control-label">{{i18n.org.userExist}}</label>
+                                    <select multiple="multiple" id="targetSelect" class="form-control" optionRequired="true" style="height: 420px;" ></select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn green" id="updateBtn">{{i18n.common.save}}</button>
+            <button type="button" class="btn btn-outline grey-gallery" data-dismiss="modal">{{i18n.common.close}}</button>
+        </div>
+    </div>
+</div>

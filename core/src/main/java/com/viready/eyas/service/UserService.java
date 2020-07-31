@@ -15,5 +15,12 @@ public interface UserService extends IService<User> {
 
     User getUserByToken(String token);
 
+    /**
+     * 根据登录名获取用户信息
+     * @param username 登录名
+     * @return 用户信息
+     */
+    User getUserByUsername(String username);
+
     void testAsync();
 }

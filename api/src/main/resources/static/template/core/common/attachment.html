@@ -1,0 +1,125 @@
+<div class="modal fade modal-scroll" tabindex="-1" data-keyboard="false" aria-hidden="true"
+     data-backdrop="static">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                <h4 class="modal-title bold"><i class="fa fa-upload"></i> {{messages.fileUpload}}</h4>
+            </div>
+            <div class="modal-body form">
+                <form method="POST" enctype="multipart/form-data">
+                    <input type="hidden" name="tableName" value="{{tableName}}"/>
+                    <input type="hidden" name="attachmentType" value="{{attachmentType}}"/>
+                    <div class="form-body">
+                        <div class="row" style="margin-bottom: 10px">
+                            <div class="col-md-12">
+                                {{if maxNumberOfFiles!=undefined}}
+                                <strong class="text-primary">{{messages.maxNumberOfFilesIs}} <span class="text-success">{{maxNumberOfFiles}}</span></strong>&nbsp;&nbsp;
+                                {{/if}}
+                                {{if supportExtension!=undefined}}
+                                <strong class="text-primary">{{messages.supportExtensionIs}} <span class="text-success">{{supportExtension}}</span></strong>&nbsp;&nbsp;
+                                {{/if}}
+                                {{if maxFileSize!=undefined}}
+                                <strong class="text-primary">{{messages.maxFileSizeIs}} <span class="text-success">{{maxFileSizeShow}}</span></strong><br/>
+                                {{/if}}
+                            </div>
+                        </div>
+                        <div class="row fileupload-buttonbar">
+                            <div class="col-md-6">
+                                <!-- The fileinput-button span is used to style the file input field as button -->
+                                <span class="btn btn-info fileinput-button">
+                                    <i class="glyphicon glyphicon-plus"></i>
+                                    <span>{{ViewMessages.addFiles}}</span>
+                                    <input type="file" name="files" multiple {{if accept!=undefined}}accept="{{accept}}"{{/if}}>
+                                </span>
+                                <button type="submit" class="btn btn-primary start">
+                                    <i class="glyphicon glyphicon-upload"></i>
+                                    <span>{{ViewMessages.startUpload}}</span>
+                                </button>
+                                <button type="reset" class="btn btn-warning cancel">
+                                    <i class="glyphicon glyphicon-ban-circle"></i>
+                                    <span>{{ViewMessages.cancelUpload}}</span>
+                                </button>
+                                <!-- The global file processing state -->
+                                <span class="fileupload-process"></span>
+                            </div>
+                            <!-- The global progress state -->
+                            <div class="col-md-5 fileupload-progress fade">
+                                <!-- The global progress bar -->
+                                <div class="progress progress-striped active" role="progressbar"
+                                     aria-valuemin="0"
+                                     aria-valuemax="100">
+                                    <div class="progress-bar progress-bar-success"
+                                         style="width:0%;"></div>
+                                </div>
+                                <!-- The extended global progress state -->
+                                <div class="progress-extended">&nbsp;</div>
+                            </div>
+                        </div>
+                        <!-- The table listing the files available for upload/download -->
+                        <table role="presentation" class="table table-bordered">
+                            <colgroup>
+                                <col>
+                                <col>
+                                <col style="width:300px">
+                                <col style="width:200px">
+                            </colgroup>
+                            <thead>
+                            <tr>
+                                <th>{{ViewMessages.thumbnail}}</th>
+                                <th>{{ViewMessages.fileName}}</th>
+                                <th>{{ViewMessages.size}}</th>
+                                <th>{{ViewMessages.operation}}</th>
+                            </tr>
+                            </thead>
+                            <tbody class="files"></tbody>
+                        </table>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline grey-gallery" data-dismiss="modal">{{ViewMessages.close}}</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script id="{{uploadTemplateId}}" type="text/x-tmpl">
+    {% for (var i=0, file; file=o.files[i]; i++) { %}
+</script>
+<!-- The template to display files available for download -->
+<script id="{{downloadTemplateId}}" type="text/x-tmpl">
+{% for (var i=0, file; file=o.files[i]; i++) { %}
+    <tr class="template-download fade">
+        <td>
+            <span class="preview">
+                {% if (file.thumbnailUrl) { %}
+                    <a href="{%=file.url%}" title="{%=file.name%}" download="{%=file.name%}" data-gallery><img src="{%=file.thumbnailUrl%}" style="max-width:200px;max-height:200px"></a>
+                {% } %}
+            </span>
+        </td>
+        <td>
+            <p class="name">
+                {% if (file.url) { %}
+                    <a href="{%=file.url%}" target="_blank" title="{%=file.name%}" download="{%=file.name%}" {%=file.thumbnailUrl?'data-gallery':''%}>{%=file.name%}</a>
+                {% } else { %}
+                    <span>{%=file.name%}</span>
+                {% } %}
+            </p>
+            {% if (file.error) { %}
+                <div><span class="label label-danger">{{messages.error}}</span> {%=file.error%}</div>
+            {% } %}
+        </td>
+        <td>
+            <span class="size">{%=o.formatFileSize(file.size)%}</span>
+        </td>
+        <td>
+            <button class="btn btn-danger delete" data-id="{%=file.id%}" >
+                <i class="glyphicon glyphicon-trash"></i>
+                <span>{{messages.delete}}</span>
+            </button>
+        </td>
+    </tr>
+{% } %}
+
+
+</script>

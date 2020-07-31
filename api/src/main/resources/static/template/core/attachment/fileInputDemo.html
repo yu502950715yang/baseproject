@@ -1,0 +1,48 @@
+<div class="modal-dialog modal-lg">
+    <div class="modal-content" id="modalContent">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+            <h4 class="modal-title font-green bold" id="modalTitle">Bootstrap-File-Input 上传文件</h4>
+        </div>
+        <div class="modal-body form">
+            <form id="addDialogForm" class="form-horizontal">
+                <div class="form-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="col-md-2 control-label font-grey-gallery bold">说明</label>
+                                <div class="col-md-10">
+                                    <label class="control-label font-grey-gallery bold">Bootstrap-file-input:可以批量上传文件;该例子可以直接查看附件表中的附件;注意:该例子未做国际化</label>
+                                    <span class="help-block"><a href="http://plugins.krajee.com/file-input">Bootstrap file input 官方地址</a></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="col-md-2 control-label font-grey-gallery bold">批量上传附件</label>
+                                <div class="col-md-10 kv-main">
+                                    <form id="importFile" name="importFile" class="form-horizontal" method="post" enctype="multipart/form-data">
+                                        <div class="box-body">
+                                            <label class="control-label">请选择要上传的文件：</label>
+                                            <input id="fileInputUpload" name="fileInputUpload"
+                                                   class="file-loading" type="file"
+                                                   multiple
+                                                   accept=".*"/>
+                                            <br>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-outline grey-gallery" data-dismiss="modal">{{i18n.common.close}}
+            </button>
+        </div>
+    </div>
+</div>

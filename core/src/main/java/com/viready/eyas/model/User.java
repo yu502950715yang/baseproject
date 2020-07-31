@@ -7,8 +7,6 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
-import java.time.LocalDateTime;
-
 /**
  * 用户model
  *
@@ -18,29 +16,29 @@ import java.time.LocalDateTime;
  */
 @Data
 @ApiModel("用户model")
-@TableName("user")
+@TableName("sys_user")
 public class User {
 
-    @TableId("id")
-    private Integer id;
+    @TableId("user_id")
+    private Integer userId;
 
     @ApiModelProperty("用户名")
     @TableField("username")
     private String username;
 
+    @ApiModelProperty("昵称")
+    @TableField("nickname")
+    private String nickname;
+
     @ApiModelProperty("密码")
     @TableField("password")
     private String password;
 
+    @ApiModelProperty("邮箱")
+    @TableField("email_address")
+    private String emailAddress;
+
     @ApiModelProperty("电话")
     @TableField("phone")
     private String phone;
-
-    @ApiModelProperty("token")
-    @TableField("token")
-    private String token;
-
-    @ApiModelProperty("注册时间")
-    @TableField("registration_time")
-    private LocalDateTime registrationTime;
 }

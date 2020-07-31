@@ -35,11 +35,19 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
     @Cacheable(value = "user", key = "#token")
     public User getUserByToken(String token) {
         User user = new User();
-        user.setToken(token);
+//        user.setToken(token);
         QueryWrapper<User> queryWrapper = new QueryWrapper<>(user);
         User user1 = getOne(queryWrapper);
         logger.info("从数据库中读取，而非从内存中读取！");
         return user1;
+    }
+
+    @Override
+    public User getUserByUsername(String username) {
+        User queryUser = new User();
+        queryUser.setUsername(username);
+        QueryWrapper<User> queryWrapper = new QueryWrapper<>(queryUser);
+        return getOne(queryWrapper);
     }
 
     @Override

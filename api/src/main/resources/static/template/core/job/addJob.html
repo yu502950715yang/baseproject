@@ -1,0 +1,62 @@
+<div class="modal-dialog modal-lg">
+    <div class="modal-content" id="modalContent">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+            <h4 class="modal-title" id="modalTitle">添加定时任务</h4>
+        </div>
+        <div class="modal-body form">
+            <form id="dialogForm" class="form-horizontal">
+                <div class="form-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">定时类名称<span
+                                        class="required"> * </span></label>
+
+                                <div class="col-md-8">
+                                    <input type="hidden" id="userId">
+                                    <input type="text" class="form-control input-medium"
+                                           placeholder="定时类名称"
+                                           id="jobClassName" name="jobClassName" required="required" maxlength="100"
+                                           specialCharacters="true">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group last">
+                                <label class="col-md-4 control-label">任务所在组<span
+                                        class="required"> * </span></label>
+
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control input-medium"
+                                           placeholder="任务分组"
+                                           id="jobGroupName" name="jobGroupName" required="required" maxlength="100"
+                                           specialCharacters="true">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">corn表达式<span
+                                        class="required"> * </span></label>
+
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control input-medium"
+                                           placeholder="corn表达式"
+                                           id="cronExpression" name="cronExpression" required="required" maxlength="30">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn green" id="addBtn">{{i18n.common.save}}</button>
+            <button type="button" class="btn btn-outline grey-gallery" data-dismiss="modal">{{i18n.common.close}}
+            </button>
+        </div>
+    </div>
+</div>

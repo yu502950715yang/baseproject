@@ -1,0 +1,71 @@
+<div class="modal-dialog modal-lg">
+    <div class="modal-content" id="modalContent">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+            <h4 class="modal-title" id="modalTitle">{{i18n.role.editRole}}</h4>
+        </div>
+        <div class="modal-body form">
+            <form id="dialogForm" class="form-horizontal">
+                <div class="form-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">{{i18n.role.roleName}}<span class="required"> * </span></label>
+
+                                <div class="col-md-8">
+                                    <input type="hidden" id="roleId" value="{{role.roleId}}">
+                                    <input type="text" class="form-control input-medium" placeholder="{{i18n.role.roleName}}"
+                                    id="roleName" name="roleName" value="{{role.roleName}}" required maxlength="30" specialCharacters="true">
+                                    <span class="help-block"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group last">
+                                <label class="col-md-4 control-label">{{i18n.common.description}}</label>
+
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control input-medium" placeholder="{{i18n.common.description}}"
+                                    id="description" name="description" value="{{role.description}}" maxlength="50" specialCharacters="true">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">{{i18n.user.username}}</label>
+
+                                <div class="col-md-10">
+                                    <select id="usernameList" class="form-control select2-multiple" style="width:695px"
+                                            multiple="multiple" placeholder="{{i18n.user.username}}">
+                                        {{each userList as user}}
+                                        <option value="{{user.userId}}">{{user.username}}</option>
+                                        {{/each}}
+                                    </select>
+                                    <span class="help-block"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">{{i18n.permission.permission}}</label>
+
+                                <div class="col-md-10">
+                                    <ul id="permissionTree" class="ztree"></ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn green" id="updateBtn">{{i18n.common.save}}</button>
+            <button type="button" class="btn btn-outline grey-gallery" data-dismiss="modal">{{i18n.common.close}}</button>
+        </div>
+    </div>
+</div>

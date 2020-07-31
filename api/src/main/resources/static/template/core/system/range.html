@@ -1,0 +1,31 @@
+<div class="modal-body form" id="editableform">
+    <form class="editableform" id="rangeForm">
+        <div style="padding: 10px">
+            <div class="editable-input"></div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <input class="form-control" data-i-type="int" id='valueFrom' name="valueFrom" placeholder='最小值'/>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <input class="form-control" data-i-type="int" id='valueTo' name="valueTo" placeholder='最大值'/>
+                    </div>
+                </div>
+            </div>
+            <div class="editable-buttons"></div>
+            <input type="button" class="confirmRange btn btn-info btn-sm" value="确定"/>
+            <input type="button" class="cancelRange btn btn-default btn-sm" value="清除"/>
+        </div>
+        <div class="editable-error-block"></div>
+    </form>
+</div>
+<script>
+    $(function () {
+//        全局初始化
+        $.iType();
+    })
+</script>

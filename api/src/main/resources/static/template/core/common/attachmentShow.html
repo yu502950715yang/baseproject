@@ -1,0 +1,66 @@
+<div class="modal fade modal-scroll" tabindex="-1" data-keyboard="false" aria-hidden="true"
+     data-backdrop="static">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                <h4 class="modal-title bold"><i class="fa fa-upload"></i> {{messages.fileUpload}}</h4>
+            </div>
+            <div class="modal-body form">
+                <form method="POST" enctype="multipart/form-data">
+                    <div class="form-body">
+                        <!-- The table listing the files available for upload/download -->
+                        <table role="presentation" class="table table-bordered">
+                            <colgroup>
+                                <col>
+                                <col>
+                                <col style="width:300px">
+                                <col style="width:200px">
+                            </colgroup>
+                            <thead>
+                            <tr>
+                                <th>{{messages.thumbnail}}</th>
+                                <th>{{messages.fileName}}</th>
+                                <th>{{messages.size}}</th>
+                                <th>{{messages.operation}}</th>
+                            </tr>
+                            </thead>
+                            <tbody class="files">
+                            {{each attachmentList as attachment}}
+                                <tr class="template-download fade in">
+                                    <td>
+                                        <span class="preview">
+                                            {{if attachment.isImg}}
+                                                <a href="{{attachment.url}}" title="{{attachment.fileName}}"
+                                                   download="{{attachment.url}}"><img
+                                                    src="{{attachment.url}}" style="max-width:200px;max-height:200px"></a>
+                                            {{/if}}
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <p class="name">
+                                            <a href="{{attachment.url}}" target="_blank" title="{{attachment.fileName}}"
+                                               download="{{attachment.url}}">{{attachment.fileName}}</a>
+                                        </p>
+                                    </td>
+                                    <td>
+                                        <span class="size">{{attachment.size | formatFileSize}}</span>
+                                    </td>
+                                    <td>
+                                        <a href="{{attachment.url}}" target="_blank" title="{{attachment.fileName}}"
+                                           class="btn btn-info" ><i class="fa fa-download"></i> {{messages.download}}</a>
+                                    </td>
+                                </tr>
+                            {{/each}}
+                            </tbody>
+                        </table>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline grey-gallery" data-dismiss="modal">{{messages.close}}
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

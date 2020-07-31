@@ -1,0 +1,33 @@
+<div class="modal-dialog modal-lg">
+    <div class="modal-content" id="modalContent">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+            <h4 class="modal-title font-green bold" id="modalTitle">{{i18n.common.import}}</h4>
+        </div>
+        <div class="modal-body form">
+            <form id="addDialogForm" class="form-horizontal">
+                <div class="form-body">
+                    <div class="modal-body">
+                        <div class="kv-main">
+                            <form id="importFile" name="importFile" class="form-horizontal" method="post"
+                                  enctype="multipart/form-data">
+                                <div class="box-body">
+                                    <div>
+                                        <label class="control-label">请选择要导入的Excel文件：</label>
+                                        <input id="excelFileOne" name="excelFileOne" class="file-loading" type="file" multiple
+                                               accept=".xls,.xlsx"> <br>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn green" id="downloadFail">{{i18n.common.downloadFail}}</button>
+            <button type="button" class="btn btn-outline grey-gallery" data-dismiss="modal">{{i18n.common.close}}
+            </button>
+        </div>
+    </div>
+</div>

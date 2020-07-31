@@ -5,6 +5,13 @@ spring:
     #设定ftl文件路径
     template-loader-path: classpath:/templates
     content-type: text/html
+    request-context-attribute: request
+    allow-request-override: false
+    cache: true
+    check-template-location: true
+    expose-request-attributes: true
+    expose-session-attributes: true
+    expose-spring-macro-helpers: true
 
 commom:
   #全局日期格式

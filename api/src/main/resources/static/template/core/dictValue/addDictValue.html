@@ -1,0 +1,17 @@
+<td class="form-group"><input id="dictCode" name="dictCode" class="form-control input-small" placeholder="{{i18n.dict.dictCode}}" required maxlength="20" digits="true"/></td>
+<td class="form-group"><input id="dictValue" name="dictValue" class="form-control input-small" placeholder="{{i18n.dict.dictValue}}" required maxlength="50" /></td>
+<td class="form-group"><select id="dictLocale" name="dictLocale" class="form-control input-small" placeholder="{{i18n.common.language}}">
+    {{each languageList as language}}
+    <option value="{{language.locale}}">{{language.languageName}}</option>
+    {{/each}}
+</select></td>
+<td class="form-group"><select id="status" name="status" class="form-control input-xsmall" placeholder="{{i18n.common.status}}">
+    {{each statusList as status}}
+    <option value="{{status.dictCode}}">{{status.dictValue}}</option>
+    {{/each}}
+</select></td>
+<td class="form-group"><input id="sortId" name="sortId" class="form-control input-xsmall" placeholder="{{i18n.common.sortId}}" required maxlength="10" digits="true"/></td>
+<td><a class="btn btn-outline btn-xs blue" href="javascript:;"
+       id="addDictBtn"><i class="fa fa-edit"></i>{{i18n.common.save}}</a>&nbsp;
+    <a class="cancel btn btn-outline grey-gallery btn-xs" href="javascript:;"
+       id="cancelAddDictValue"><i class="fa fa-times"></i>{{i18n.common.cancel}}</a></td>
