@@ -18,5 +18,9 @@ public interface MenuService extends IService<Menu> {
 
     void initMenuRefreshFlag(HttpServletRequest request);
 
+    /**
+     * 根据用户权限获取管理端菜单
+     * @return 后台菜单
+     */
     List<MenuVo> getMenuData();
 }
