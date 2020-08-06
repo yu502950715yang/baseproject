@@ -14,7 +14,7 @@
 <div class="page-header navbar navbar-fixed-top">
     <div class="page-header-inner">
         <div class="page-logo">
-            <a href=""><img src="/img//logo_lovcreate_white.svg" alt="logo" class="logo-default" style="height:33px"/></a>
+            <a href=""><img src="/img//logo-big.svg" alt="logo" class="logo-default" style="height:33px"/></a>
         </div>
     </div>
 </div>

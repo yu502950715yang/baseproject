@@ -13,7 +13,7 @@
 <body class="login">
 <div class="logo">
     <a href="tologin">
-    <img src="/img//logo_lovcreate_white.svg" alt="" style="height:50px"/>
+    <img src="/img//logo-big.svg" alt="" style="height:50px"/>
     </a>
 </div>
 <div class="menu-toggler sidebar-toggler">

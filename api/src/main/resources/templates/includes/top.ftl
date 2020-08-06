@@ -1,7 +1,7 @@
 <div class="page-header navbar navbar-fixed-top">
     <div class="page-header-inner">
         <div class="page-logo">
-            <a href="/"><img src="/img//logo_lovcreate_white.svg" alt="logo" class="logo-default" style="height:33px"/></a>
+            <a href="/"><img src="/img//logo-big.svg" alt="logo" class="logo-default" style="height:33px"/></a>
             <div class="menu-toggler sidebar-toggler"><span></span></div>
         </div>
         <a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse"><span></span></a>
