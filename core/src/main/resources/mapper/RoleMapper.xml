@@ -12,4 +12,17 @@
         WHERE p.role_id=ur.role_id AND u.user_id = ur.user_id
         AND u.username=#{username}
     </select>
+
+    <select id="listPage" resultType="com.viready.eyas.model.Role">
+        SELECT *
+        FROM sal_role
+        <where>
+            <if test="role.roleName != null and role.roleName !=''">
+                AND role_name LIKE CONCAT('%',#{role.roleName},'%')
+            </if>
+            <if test="role.description!=null and role.description !=''">
+                and description like CONCAT('%',#{role.description},'%')
+            </if>
+        </where>
+    </select>
 </mapper>

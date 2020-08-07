@@ -3,7 +3,7 @@ spring:
     active: dev
   freemarker:
     #设定ftl文件路径
-    template-loader-path: classpath:/templates
+    template-loader-path: classpath:/templates/
     content-type: text/html
     request-context-attribute: request
     allow-request-override: false
@@ -12,6 +12,7 @@ spring:
     expose-request-attributes: true
     expose-session-attributes: true
     expose-spring-macro-helpers: true
+    suffix: .ftl
 
 commom:
   #全局日期格式

@@ -50,7 +50,7 @@ var Datatable = function () {
             }
             options = $.extend(true, {
                 src: "", // actual table
-                loadingMessage: i18n.common.loading,
+                loadingMessage: '载入中，请稍候...',
                 onQuery: function (data) {
                 },
                 onSuccess: function (grid, response) {
@@ -78,22 +78,22 @@ var Datatable = function () {
                     "pageLength": 10, // default records per page
                     "language": { // language settings
                         // metronic spesific
-                        "metronicGroupActions": " _TOTAL_ " + i18n.dataTables.recordsSelected,
-                        "metronicAjaxRequestGeneralError": i18n.dataTables.badRequest,
+                        "metronicGroupActions": " _TOTAL_ " + "条记录被选中",
+                        "metronicAjaxRequestGeneralError": "请求失败，请检查网络连接！",
 
                         // data tables spesific
-                        "lengthMenu": "<span class='seperator'>|</span>" + i18n.dataTables.view + " _MENU_ " + i18n.dataTables.records,
-                        "info": "<span class='seperator'>|</span>" + i18n.dataTables.total + " _TOTAL_ " + i18n.dataTables.records,
-                        "infoEmpty": i18n.dataTables.noRecords,
-                        "emptyTable": i18n.dataTables.noData,
-                        "zeroRecords": i18n.dataTables.noMatch,
+                        "lengthMenu": "<span class='seperator'>|</span>" + "每页" + " _MENU_ " + "条",
+                        "info": "<span class='seperator'>|</span>" + "共" + " _TOTAL_ " + "条",
+                        "infoEmpty": "未查询到记录！",
+                        "emptyTable": "表格中无可用数据！",
+                        "zeroRecords": "未找到匹配记录！",
                         "paginate": {
-                            "previous": i18n.dataTables.prev,
-                            "next": i18n.dataTables.next,
-                            "last": i18n.dataTables.last,
-                            "first": i18n.dataTables.first,
-                            "page": i18n.dataTables.page,
-                            "pageOf": i18n.dataTables.of
+                            "previous": "上一页",
+                            "next": "下一页",
+                            "last": "上一页",
+                            "first": "第一页",
+                            "page": "第",
+                            "pageOf": "页，共"
                         }
                     },
                     "orderCellsTop": true,

@@ -23,7 +23,6 @@ var customGlobal = function () {
                         var data = {
                             menus: data.returnData
                         }
-                        // var sidebarHtml = customGlobal.remoteTemplate("template/core/common/sidebar.html", data);
                         var sidebarHtml = template("sidebar",data);
                         localStorage.clear();
                         localStorage[storeKey] = sidebarHtml;

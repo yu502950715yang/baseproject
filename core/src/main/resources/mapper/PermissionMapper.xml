@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.viready.eyas.dao.PermissionMapper">
+
+    <select id="getPermissionTree" resultType="com.viready.eyas.model.PermissionTreeNode">
+        SELECT *
+        FROM (SELECT m.menu_id id,m.menu_name NAME,m.parent_id pId,m.perm_token,m.sort_id
+             FROM sys_menu m
+             WHERE m.status=1 AND perm_token !='' and m.level != 0) temp
+         UNION
+         SELECT p.perm_token id,p.description NAME,p.parent_id pId,p.perm_token,1000 sort_id
+             FROM sys_permission p
+             LEFT JOIN sys_menu m
+             ON p.parent_id=m.menu_id
+             WHERE m.status=1
+         ORDER BY sort_id
+    </select>
+
+</mapper>

@@ -19,7 +19,7 @@ var roleListTable = function () {
             dataTable: {
                 responsive: true,
                 "ajax": {
-                    "url": "/b/core/role/getRoleListPage" // ajax source
+                    "url": "/core/role/getRoleListPage" // ajax source
                 },
                 "columns": [
                     {data: 'roleName', orderable: true, className:'control'},
@@ -32,7 +32,7 @@ var roleListTable = function () {
                     {
                         data: 'operate', orderable: false,
                         render: function (data, type, full) {
-                            return template("actionBtn", {data: data, type: type, full: full, i18n: i18n});
+                            return template("actionBtn", {data: data, type: type, full: full});
                         }
                     }
                 ]
@@ -42,7 +42,7 @@ var roleListTable = function () {
 
     var handleEvent = function () {
         $("#addRole").on("click", function () {
-            var templateHtml = customGlobal.remoteTemplate("template/core/role/addRole.html", {userList: userList, i18n:i18n});
+            var templateHtml = customGlobal.remoteTemplate("template/core/role/addRole.html", {userList: userList});
             $("#modalDialog").html(templateHtml).modal("show");
             zTreeInit();
             $('#usernameList').select2({ language:'zh-CN'});
@@ -101,8 +101,7 @@ var roleListTable = function () {
                 var templateHtml = customGlobal.remoteTemplate("template/core/role/updateRole.html",
                     {
                         role: role,
-                        userList: userList,
-                        i18n:i18n
+                        userList: userList
                     });
                 var $template = $(templateHtml);
 

@@ -17,7 +17,7 @@
 <script type="text/html" id="menuItem">
     {{each children as temp}}
     <li id="{{temp.menuId}}" class="nav-item">
-        <a href="{{if temp.leaf}}{{temp.url}}{{else}}javascript:;{{/if}}" class="level1-menu nav-link {{if temp.leaf}}{{temp.url}}{{else}}nav-toggle{{/if}}">
+        <a href="{{if temp.leaf}}{{temp.url}}?menuId={{temp.menuId}}{{else}}javascript:;{{/if}}" class="level1-menu nav-link {{if temp.leaf}}{{temp.url}}{{else}}nav-toggle{{/if}}">
 
             <span class="title">{{temp.menuName}}</span>
             <span class="selected"></span>

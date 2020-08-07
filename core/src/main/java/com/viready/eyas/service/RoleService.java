@@ -1,6 +1,8 @@
 package com.viready.eyas.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.github.pagehelper.PageInfo;
+import com.viready.eyas.common.page.Page;
 import com.viready.eyas.model.Role;
 
 import java.util.List;
@@ -27,4 +29,6 @@ public interface RoleService extends IService<Role> {
      * @return 权限字符串
      */
     List<String> getRolePermTokensByUsername(String username);
+
+    PageInfo<Role> listPage(Role role, Page page);
 }

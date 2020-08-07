@@ -1,6 +1,9 @@
 package com.viready.eyas.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.github.pagehelper.PageInfo;
+import com.viready.eyas.common.page.Page;
+import com.viready.eyas.common.page.PageHandle;
 import com.viready.eyas.dao.RoleMapper;
 import com.viready.eyas.model.Role;
 import com.viready.eyas.service.RoleService;
@@ -30,5 +33,11 @@ public class RoleServiceImpl extends ServiceImpl<RoleMapper, Role> implements Ro
     @Override
     public List<String> getRolePermTokensByUsername(String username) {
         return roleMapper.getRolePermTokensByUsername(username);
+    }
+
+    @Override
+    public PageInfo<Role> listPage(Role role, Page page) {
+        PageHandle.startPage(page);
+        return new PageInfo<>(roleMapper.listPage(role));
     }
 }

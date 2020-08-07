@@ -29,4 +29,6 @@ public interface RoleMapper extends BaseMapper<Role> {
      * @return 权限字符串list
      */
     List<String> getRolePermTokensByUsername(String username);
+
+    List<Role> listPage(Role role);
 }
