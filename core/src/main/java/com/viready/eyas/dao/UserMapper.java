@@ -4,6 +4,8 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.viready.eyas.model.User;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 /**
  * 用户mapper
  *
@@ -13,4 +15,12 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface UserMapper extends BaseMapper<User> {
+
+    /**
+     * 根据角色id获取用户列表
+     *
+     * @param roleId 角色id
+     * @return 用户list
+     */
+    List<User> listByRoleId(Integer roleId);
 }

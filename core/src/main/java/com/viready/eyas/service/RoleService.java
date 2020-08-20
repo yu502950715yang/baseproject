@@ -3,7 +3,7 @@ package com.viready.eyas.service;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.github.pagehelper.PageInfo;
 import com.viready.eyas.common.page.Page;
-import com.viready.eyas.model.Role;
+import com.viready.eyas.model.role.Role;
 
 import java.util.List;
 

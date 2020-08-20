@@ -1,8 +1,8 @@
 package com.viready.eyas.shiro;
 
 import com.alibaba.druid.util.StringUtils;
-import com.viready.eyas.model.Role;
 import com.viready.eyas.model.User;
+import com.viready.eyas.model.role.Role;
 import com.viready.eyas.service.RoleService;
 import com.viready.eyas.service.UserService;
 import org.apache.shiro.authc.*;

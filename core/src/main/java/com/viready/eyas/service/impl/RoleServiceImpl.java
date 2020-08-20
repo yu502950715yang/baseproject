@@ -5,7 +5,7 @@ import com.github.pagehelper.PageInfo;
 import com.viready.eyas.common.page.Page;
 import com.viready.eyas.common.page.PageHandle;
 import com.viready.eyas.dao.RoleMapper;
-import com.viready.eyas.model.Role;
+import com.viready.eyas.model.role.Role;
 import com.viready.eyas.service.RoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

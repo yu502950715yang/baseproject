@@ -2,7 +2,18 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.viready.eyas.dao.RoleMapper">
 
-    <select id="getRolesByUsername" resultType="com.viready.eyas.model.Role">
+    <resultMap id="roleInfo" type="com.viready.eyas.model.role.RoleBean">
+        <id column="role_id" property="roleId"/>
+        <result column="role_name" property="roleName"/>
+        <result column="description" property="description"/>
+        <collection property="userList"
+                    javaType="java.util.ArrayList"
+                    ofType="com.viready.eyas.model.User"
+                    select="com.viready.eyas.dao.UserMapper.listByRoleId"
+                    column="role_id"/>
+    </resultMap>
+
+    <select id="getRolesByUsername" resultType="com.viready.eyas.model.role.Role">
         SELECT r.* FROM sys_user_role ur,sys_user u,sys_role r
         WHERE u.username=#{username} AND ur.user_id=u.user_id AND r.role_id=ur.role_id
     </select>
@@ -13,9 +24,9 @@
         AND u.username=#{username}
     </select>
 
-    <select id="listPage" resultType="com.viready.eyas.model.Role">
+    <select id="listPage" resultMap="roleInfo">
         SELECT *
-        FROM sal_role
+        FROM sys_role
         <where>
             <if test="role.roleName != null and role.roleName !=''">
                 AND role_name LIKE CONCAT('%',#{role.roleName},'%')

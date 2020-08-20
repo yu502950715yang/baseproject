@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.viready.eyas.dao.UserMapper">
+
+    <select id="listByRoleId" resultType="com.viready.eyas.model.User">
+        SELECT su.user_id, su.username, su.nickname
+        FROM sys_user_role sur
+        LEFT JOIN sys_user su ON su.user_id = sur.user_id
+        WHERE sur.role_id = #{roleId}
+        GROUP BY su.user_id
+    </select>
+</mapper>

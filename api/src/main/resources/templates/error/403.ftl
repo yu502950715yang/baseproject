@@ -6,7 +6,6 @@
 <!--<![endif]-->
 <head>
     <title>403</title>
-    <#import "../includes/spring.ftl" as spring/>
     <#include "../includes/head.ftl">
     <link href="/assets/pages/css/error.css" rel="stylesheet" type="text/css"/>
 </head>

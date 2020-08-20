@@ -6,7 +6,7 @@ import com.github.pagehelper.PageInfo;
 import com.viready.eyas.common.page.DataTablesPage;
 import com.viready.eyas.common.page.DataTablesResponse;
 import com.viready.eyas.model.PermissionTreeNode;
-import com.viready.eyas.model.Role;
+import com.viready.eyas.model.role.Role;
 import com.viready.eyas.service.PermissionService;
 import com.viready.eyas.service.RoleService;
 import com.viready.eyas.service.UserService;
@@ -15,6 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -47,7 +48,7 @@ public class RoleController {
         return "core/role/role";
     }
 
-    @GetMapping("/getRoleListPage")
+    @PostMapping("/getRoleListPage")
     @ResponseBody
     @RequiresPermissions("b:role:open")
     public DataTablesResponse<Role> getRoleListPage(Role role, DataTablesPage dataTablesPage) {

@@ -1,7 +1,8 @@
 package com.viready.eyas.dao;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.viready.eyas.model.Role;
+import com.viready.eyas.model.role.Role;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -30,5 +31,5 @@ public interface RoleMapper extends BaseMapper<Role> {
      */
     List<String> getRolePermTokensByUsername(String username);
 
-    List<Role> listPage(Role role);
+    List<Role> listPage(@Param("role") Role role);
 }
