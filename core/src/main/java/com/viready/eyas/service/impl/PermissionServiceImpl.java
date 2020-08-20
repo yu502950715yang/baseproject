@@ -1,6 +1,6 @@
 package com.viready.eyas.service.impl;
 
-import com.viready.eyas.dao.PermissionMapper;
+import com.viready.eyas.mapper.PermissionMapper;
 import com.viready.eyas.model.PermissionTreeNode;
 import com.viready.eyas.service.PermissionService;
 import org.springframework.beans.factory.annotation.Autowired;

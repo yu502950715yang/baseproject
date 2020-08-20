@@ -1,4 +1,4 @@
-package com.viready.eyas.dao;
+package com.viready.eyas.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.viready.eyas.model.User;

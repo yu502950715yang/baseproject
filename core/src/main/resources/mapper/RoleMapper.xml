@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.viready.eyas.dao.RoleMapper">
+<mapper namespace="com.viready.eyas.mapper.RoleMapper">
 
     <resultMap id="roleInfo" type="com.viready.eyas.model.role.RoleBean">
         <id column="role_id" property="roleId"/>
@@ -9,7 +9,7 @@
         <collection property="userList"
                     javaType="java.util.ArrayList"
                     ofType="com.viready.eyas.model.User"
-                    select="com.viready.eyas.dao.UserMapper.listByRoleId"
+                    select="com.viready.eyas.mapper.UserMapper.listByRoleId"
                     column="role_id"/>
     </resultMap>
 

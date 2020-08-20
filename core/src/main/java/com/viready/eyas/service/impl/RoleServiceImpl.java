@@ -4,7 +4,7 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.github.pagehelper.PageInfo;
 import com.viready.eyas.common.page.Page;
 import com.viready.eyas.common.page.PageHandle;
-import com.viready.eyas.dao.RoleMapper;
+import com.viready.eyas.mapper.RoleMapper;
 import com.viready.eyas.model.role.Role;
 import com.viready.eyas.service.RoleService;
 import org.springframework.beans.factory.annotation.Autowired;

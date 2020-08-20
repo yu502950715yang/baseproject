@@ -2,7 +2,7 @@ package com.viready.eyas.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.viready.eyas.dao.MenuMapper;
+import com.viready.eyas.mapper.MenuMapper;
 import com.viready.eyas.model.menu.Menu;
 import com.viready.eyas.model.menu.MenuVo;
 import com.viready.eyas.service.MenuService;
@@ -18,7 +18,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
- * Description on this file, you will change here.
+ * 菜单service实现类
  *
  * @author Eric
  * @since 1.0
@@ -26,8 +26,6 @@ import java.util.stream.Collectors;
  */
 @Service
 public class MenuServiceImpl extends ServiceImpl<MenuMapper, Menu> implements MenuService {
-
-    private final String ROOT_MENU_PARENT_ID = "-1";
 
     @Override
     public void initMenuRefreshFlag(HttpServletRequest request) {
@@ -42,6 +40,7 @@ public class MenuServiceImpl extends ServiceImpl<MenuMapper, Menu> implements Me
         queryWrapper.eq("status", 1);
         List<Menu> menuList = list(queryWrapper);
         List<Menu> userMenus = menuList.stream().filter(menu -> currentUser.isPermitted(menu.getPermToken())).collect(Collectors.toList());
+        String ROOT_MENU_PARENT_ID = "-1";
         return new ArrayList<>(createTree(ROOT_MENU_PARENT_ID, userMenus));
     }
 

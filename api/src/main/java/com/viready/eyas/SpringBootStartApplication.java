@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cache.annotation.EnableCaching;
 
 @SpringBootApplication(scanBasePackages = {"com.viready.eyas"})
-@MapperScan(basePackages = {"com.viready.**.dao"})
+@MapperScan(basePackages = {"com.viready.**.mapper"})
 @EnableCaching
 public class SpringBootStartApplication {
 

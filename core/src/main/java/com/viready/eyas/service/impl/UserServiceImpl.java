@@ -2,7 +2,7 @@ package com.viready.eyas.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.viready.eyas.dao.UserMapper;
+import com.viready.eyas.mapper.UserMapper;
 import com.viready.eyas.model.User;
 import com.viready.eyas.service.UserService;
 import org.slf4j.Logger;
