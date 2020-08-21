@@ -1,14 +1,16 @@
 <div class="page-sidebar-wrapper" id="sidebarWrapper">
     <div class="page-sidebar navbar-collapse collapse">
         <!-- BEGIN SIDEBAR MENU -->
-        <ul class="page-sidebar-menu page-header-fixed " data-keep-expanded="true" data-auto-scroll="true" data-slide-speed="200" style="padding-top: 20px"></ul>
+        <ul class="page-sidebar-menu page-header-fixed " data-keep-expanded="true" data-auto-scroll="true"
+            data-slide-speed="200" style="padding-top: 20px"></ul>
         <!-- END SIDEBAR MENU -->
     </div>
 </div>
 <#--<input type="hidden" id="menuParentId" value="${menu.parentId}"/>-->
 <input type="hidden" id="menuId" value="${(menu.menuId)!''}"/>
+<input type="hidden" id="menuLevel" value="${(menu.level)!''}"/>
 <#--<%-->
-    <#--SecurityUtils.getSubject().getSession().beforeResponse("requestNo",(Integer) session.getAttribute("requestNo")+1);-->
+<#--SecurityUtils.getSubject().getSession().beforeResponse("requestNo",(Integer) session.getAttribute("requestNo")+1);-->
 <#--%>-->
 <script>
     var requestNo = "${Session.sessionId}"
@@ -16,8 +18,9 @@
 
 <script type="text/html" id="menuItem">
     {{each children as temp}}
-    <li id="{{temp.menuId}}" class="nav-item">
-        <a href="{{if temp.leaf}}{{temp.url}}?menuId={{temp.menuId}}{{else}}javascript:;{{/if}}" class="level1-menu nav-link {{if temp.leaf}}{{temp.url}}{{else}}nav-toggle{{/if}}">
+    <li id="menu_{{temp.menuId}}" class="level1-menu nav-item">
+        <a href="{{if temp.leaf}}{{temp.url}}?menuId={{temp.menuId}}{{else}}javascript:;{{/if}}"
+           class="level1-menu nav-link {{if temp.leaf}}{{temp.url}}{{else}}nav-toggle{{/if}}">
 
             <span class="title">{{temp.menuName}}</span>
             <span class="selected"></span>

@@ -49,8 +49,14 @@ var customGlobal = function () {
 
         function _initMenuStyle() {
             var $activeMenu = $("#menu_" + $("#menuId").val()).addClass("active");
-            $activeMenu.parents("li.level1-menu").addClass("active open").find("a.level1-menu span.arrow").addClass("open");
-            $activeMenu.parents("li.level2-menu").addClass("active open").find("a.level2-menu span.arrow").addClass("open");
+            var menuLevel = $("#menuLevel").val();
+            var $tempParent = $activeMenu.parents("li.level1-menu");
+            for (var i = 0; i < menuLevel; i++) {
+                $tempParent.addClass("active open").find("a.level1-menu span.arrow").addClass("open");
+                if ((i + 1) < menuLevel) {
+                    $tempParent = $tempParent.parents("li.level1-menu");
+                }
+            }
             if ($("body").hasClass('page-sidebar-closed')) {
                 $('.page-sidebar-menu').addClass('page-sidebar-menu-closed');
             }
