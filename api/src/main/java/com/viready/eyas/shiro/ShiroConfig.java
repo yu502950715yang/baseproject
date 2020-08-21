@@ -45,7 +45,7 @@ public class ShiroConfig {
         shiroFilterFactoryBean.setFilterChainDefinitionMap(filterMap);
 
         //修改认证失败跳转页面
-        shiroFilterFactoryBean.setLoginUrl("/error/401");
+        shiroFilterFactoryBean.setLoginUrl("/login");
         shiroFilterFactoryBean.setUnauthorizedUrl("/error/403");
         return shiroFilterFactoryBean;
     }
