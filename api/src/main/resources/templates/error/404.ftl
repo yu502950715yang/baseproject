@@ -20,6 +20,7 @@
 <div class="clearfix"></div>
 
 <div class="page-container">
+    <#include  "../includes/sidebar.ftl">
     <div class="page-content-wrapper">
         <div class="page-content">
             <h3 class="page-title">
