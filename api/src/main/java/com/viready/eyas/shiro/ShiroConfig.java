@@ -41,6 +41,16 @@ public class ShiroConfig {
         filterMap.put("/error", "anon");
         filterMap.put("/autoComplete", "anon");
         filterMap.put("/file/**", "anon");
+        filterMap.put("/swagger-ui.html", "anon");
+        filterMap.put("/swagger-resources/**", "anon");
+        filterMap.put("/**/*.css", "anon");
+        filterMap.put("/**/*.js", "anon");
+        filterMap.put("/**/*.png", "anon");
+        filterMap.put("/**/*.jpg", "anon");
+        filterMap.put("/**/*.jpeg", "anon");
+        filterMap.put("/**/*.gif", "anon");
+        filterMap.put("/**/*.svg", "anon");
+        filterMap.put("/v2/api-docs", "anon");
         filterMap.put("/**", "authc");
         shiroFilterFactoryBean.setFilterChainDefinitionMap(filterMap);
 
