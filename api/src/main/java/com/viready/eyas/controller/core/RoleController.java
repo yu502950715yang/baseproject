@@ -11,7 +11,6 @@ import com.viready.eyas.service.PermissionService;
 import com.viready.eyas.service.RoleService;
 import com.viready.eyas.service.UserService;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -32,12 +31,15 @@ import java.util.List;
 @RequestMapping("/core/role")
 public class RoleController {
 
-    @Autowired
-    private RoleService roleService;
-    @Autowired
-    private UserService userService;
-    @Autowired
-    private PermissionService permissionService;
+    private final RoleService roleService;
+    private final UserService userService;
+    private final PermissionService permissionService;
+
+    public RoleController(RoleService roleService, UserService userService, PermissionService permissionService) {
+        this.roleService = roleService;
+        this.userService = userService;
+        this.permissionService = permissionService;
+    }
 
     @GetMapping
     @RequiresPermissions("b:role:open")

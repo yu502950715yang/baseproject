@@ -3,7 +3,7 @@ package com.viready.eyas.cache;
 import com.viready.eyas.model.menu.Menu;
 
 /**
- * Description on this file, you will change here.
+ * 菜单缓存
  *
  * @author Eric
  * @since 1.0
@@ -11,10 +11,14 @@ import com.viready.eyas.model.menu.Menu;
  */
 public interface MenuCache {
 
+    /**
+     * 初始化
+     */
     void init();
 
     /**
      * 根据菜单id获取菜单
+     *
      * @param menuId 菜单id
      * @return 菜单
      */

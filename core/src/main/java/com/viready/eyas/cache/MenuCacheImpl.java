@@ -2,7 +2,6 @@ package com.viready.eyas.cache;
 
 import com.viready.eyas.model.menu.Menu;
 import com.viready.eyas.service.MenuService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
@@ -20,10 +19,13 @@ import java.util.stream.Collectors;
 @Service
 public class MenuCacheImpl implements MenuCache {
 
-    @Autowired
-    private MenuService menuService;
+    private final MenuService menuService;
 
     private Map<String, Menu> menuMap = new HashMap<>();
+
+    public MenuCacheImpl(MenuService menuService) {
+        this.menuService = menuService;
+    }
 
     @Override
     public void init() {

@@ -25,10 +25,18 @@ public interface RoleService extends IService<Role> {
 
     /**
      * 根据登录名获取权限字符串
+     *
      * @param username 登录名
      * @return 权限字符串
      */
     List<String> getRolePermTokensByUsername(String username);
 
+    /**
+     * 角色分页
+     *
+     * @param role 查询条件
+     * @param page 分页
+     * @return 分页数据
+     */
     PageInfo<Role> listPage(Role role, Page page);
 }

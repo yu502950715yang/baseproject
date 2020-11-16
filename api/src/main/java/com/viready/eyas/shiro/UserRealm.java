@@ -28,7 +28,9 @@ public class UserRealm extends AuthorizingRealm {
     @Autowired
     private RoleService roleService;
 
-    //执行授权逻辑
+    /**
+     * 执行授权逻辑
+     */
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principalCollection) {
         String username = String.valueOf(getAvailablePrincipal(principalCollection));
@@ -49,7 +51,9 @@ public class UserRealm extends AuthorizingRealm {
         return null;
     }
 
-    //执行认证逻辑
+    /**
+     * 执行认证逻辑
+     */
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken authenticationToken) throws AuthenticationException {
         UsernamePasswordToken token = (UsernamePasswordToken) authenticationToken;

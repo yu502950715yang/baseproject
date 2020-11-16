@@ -6,6 +6,6 @@ public interface RandomImage {
 
     BufferedImage getValidateImage();
 
-    // 获取生成的验证字符串
+    //获取生成的验证字符串
     String getValidateString();
 }

@@ -14,7 +14,6 @@ import org.apache.shiro.web.util.SavedRequest;
 import org.apache.shiro.web.util.WebUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -39,10 +38,13 @@ public class LoginController {
 
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    @Autowired
-    private UserService userService;
-    @Autowired
-    private MenuService menuService;
+    private final UserService userService;
+    private final MenuService menuService;
+
+    public LoginController(UserService userService, MenuService menuService) {
+        this.userService = userService;
+        this.menuService = menuService;
+    }
 
     @GetMapping()
     public String loginPage() {

@@ -1,14 +1,13 @@
 package com.viready.eyas.init;
 
 import com.viready.eyas.cache.MenuCache;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
 
 /**
- * Description on this file, you will change here.
+ * 启动前执行
  *
  * @author Eric
  * @since 1.0
@@ -18,8 +17,11 @@ import javax.annotation.PostConstruct;
 @Lazy(false)
 public class StartUpService {
 
-    @Autowired
-    private MenuCache menuCache;
+    private final MenuCache menuCache;
+
+    public StartUpService(MenuCache menuCache) {
+        this.menuCache = menuCache;
+    }
 
     @PostConstruct
     public void init() {

@@ -6,12 +6,18 @@ import java.util.Random;
 
 public abstract class AbstractRandomImage implements RandomImage {
 
-    protected static final String randomString = "0123456789"; // 图片上的字符串
-    protected String validateString; // 生成的验证字符串
-    protected BufferedImage validateImage; // 生成的验证图片
-    protected int length; // 图片上字符的个数
-    protected int width; // 图片的宽度
-    protected int height; // 图片的高度
+    //图片上的字符串
+    protected static final String RANDOM_STRING = "0123456789";
+    //生成的验证字符串
+    protected String validateString;
+    //生成的验证图片
+    protected BufferedImage validateImage;
+    //图片上字符的个数
+    protected int length;
+    //图片的宽度
+    protected int width;
+    //图片的高度
+    protected int height;
 
     protected AbstractRandomImage() {
         //生成100px*22px的包含6个字符的验证码
@@ -33,7 +39,7 @@ public abstract class AbstractRandomImage implements RandomImage {
         this.height = height;
     }
 
-    // 获取生成的验证字符串
+    //获取生成的验证字符串
     @Override
     public String getValidateString() {
         if (validateString == null) {

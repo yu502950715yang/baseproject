@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 /**
- * Description on this file, you will change here.
+ * google框
  *
  * @author Eric
  * @since 1.0
@@ -16,5 +16,8 @@ import java.util.List;
 @Repository
 public interface AutoCompleteMapper extends BaseMapper<AutoComplete> {
 
+    /**
+     * 获取角色名
+     */
     List<AutoComplete> gAutoRoleName();
 }

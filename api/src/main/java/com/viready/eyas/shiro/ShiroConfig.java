@@ -68,7 +68,9 @@ public class ShiroConfig {
         return securityManager;
     }
 
-    // 创建Realm
+    /**
+     * 创建Realm
+     */
     @Bean(name = "userRealm")
     public UserRealm getUserRealm() {
         return new UserRealm();

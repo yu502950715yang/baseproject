@@ -13,14 +13,20 @@ import lombok.ToString;
 @NoArgsConstructor
 public class AutoComplete {
 
-    private String id;//hidden input的value
-    private String name;//text input的value
-    private String spell;//拼音全写
-    private String firstSpell;//拼音首字母
-
-    private String keyword;//查询时候的关键字
-    private boolean isShowAll;//是否显示全部结果
-    private String flag;//查询类别
+    //hidden input的value
+    private String id;
+    //text input的value
+    private String name;
+    //拼音全写
+    private String spell;
+    //拼音首字母
+    private String firstSpell;
+    //查询时候的关键字
+    private String keyword;
+    //是否显示全部结果
+    private boolean isShowAll;
+    //查询类别
+    private String flag;
 
 
     public AutoComplete(String id, String name) {

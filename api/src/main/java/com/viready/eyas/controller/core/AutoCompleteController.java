@@ -2,7 +2,6 @@ package com.viready.eyas.controller.core;
 
 import com.viready.eyas.model.AutoComplete;
 import com.viready.eyas.service.AutoCompleteService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -10,7 +9,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import java.util.List;
 
 /**
- * Description on this file, you will change here.
+ * google框相关接口
  *
  * @author Eric
  * @since 1.0
@@ -20,8 +19,11 @@ import java.util.List;
 @RequestMapping("/autoComplete")
 public class AutoCompleteController {
 
-    @Autowired
-    private AutoCompleteService autoCompleteService;
+    private final AutoCompleteService autoCompleteService;
+
+    public AutoCompleteController(AutoCompleteService autoCompleteService) {
+        this.autoCompleteService = autoCompleteService;
+    }
 
     @RequestMapping
     @ResponseBody

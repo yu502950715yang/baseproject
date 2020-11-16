@@ -26,10 +26,17 @@ public interface RoleMapper extends BaseMapper<Role> {
 
     /**
      * 根据登录名获取权限字符串
+     *
      * @param username 登录名
      * @return 权限字符串list
      */
     List<String> getRolePermTokensByUsername(String username);
 
+    /**
+     * 分页
+     *
+     * @param role 角色相关搜索条件
+     * @return 角色list
+     */
     List<Role> listPage(@Param("role") Role role);
 }
