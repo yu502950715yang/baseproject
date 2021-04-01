@@ -17,3 +17,8 @@ spring:
 commom:
   #全局日期格式
   date-format: yyyy-MM-dd HH:mm:ss
+
+logging:
+  config: classpath:logback-spring.xml
+  file:
+    path: logs
